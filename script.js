@@ -2,19 +2,19 @@
 
 var generateBtn = document.querySelector("#generate");
 
-// Arrays with characters for password generator:
+// Global var`s with characters for password generator:
 
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var bigLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var specialSymbols = ["!", "*", "}", "{", "[", "]", "/", "#", "%", "@", "(", ")", "_", ";", ":", "<", ">", "&", "?", "+", "`", "|", "-", "="];
 
-// variables to store the value output from functions below
+// Global variables to store the value output from functions below:
 
 var finalPassword = "";
 var passwordArray = [];
 
-// variable to store the characters if the prompt is confirmed 
+// Global variables to store the characters in an array if the prompt is confirmed:
 
 var lowercaseConfirmed = [];
 var uppercaseConfirmed = [];
@@ -41,20 +41,13 @@ var arrayPassword = function() {
   return passwordArray;
 };
 
-// Generating a random line of characters from an array 
-// Math.random() returns a random number between 0 (inclusive),  and 1 (exclusive) (w3schools)
-
-function randomiser(arr) {
-  return arr[Math.floor(Math.random() * arr.length)];
-};
-
 // main function for password creation :
 
 function generatePassword() {
       
   // first prompt to select the password lenght. It would print an alert if lenght is not 8 to 128
 
-      var length = prompt("Please, type in the lenght of your password (a number from 8 to 128)");
+      var length = parseInt(prompt("Please, type in the lenght of your password (a number from 8 to 128)"));
       if (length > 128 ){
         alert("This isn`t a valid number! Please, input a number 8 - 128");
         return;
@@ -79,9 +72,12 @@ function generatePassword() {
     
     // Creating final password from the characters selected to the password array using length from the first prompt 
 
+  // Generating a random line of characters from an array 
+  // Math.random() returns a random number between 0 (inclusive),  and 1 (exclusive) (w3schools)
+
     arrayPassword();
     for (i = 0; i <= length; i++) {
-      finalPassword = finalPassword.concat(randomiser(passwordArray));
+      finalPassword = finalPassword.concat(passwordArray[Math.floor(Math.random() * passwordArray.length)]);
     }
     
     return finalPassword;
