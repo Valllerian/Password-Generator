@@ -11,6 +11,12 @@ var specialSymbols = ["!", "*", "}", "{", "[", "]", "/", "#", "%", "@", "(", ")"
 var finalPassword = "";
 var passwordArray = [];
 
+// variable to store the characters if the prompt is confirmed 
+var lowercaseConfirmed = "";
+var uppercaseConfirmed = "";
+var numericConfirmed = "";
+var specialConfirmed = "";
+
 // Creating a function to modify passwordArray var
 var arrayPassword = function() {
   if (lowercaseConfirmed) {
@@ -33,14 +39,9 @@ function randomiser(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 };
 
-// variable to store the characters if the prompt is confirmed 
-var lowercaseConfirmed = "";
-var uppercaseConfirmed = "";
-var numericConfirmed = "";
-var specialConfirmed = "";
-
 // main function for password creation :
 function generatePassword() {
+      
   // first prompt to select the password lenght. It would print an alert if lenght is not 8 to 128
       var length = prompt("Please, type in the lenght of your password (a number from 8 to 128)");
       if (length > 128 ){
@@ -55,7 +56,7 @@ function generatePassword() {
       lowercaseConfirmed = confirm("Would you like to include lowercase characters? ");
       uppercaseConfirmed = confirm("Would you like to include uppercase characters? ");
       numericConfirmed = confirm("Would you like to include numeric characters? ");
-      specialConfirmed = confirm("Would you like to include srecial symbols? ");
+      specialConfirmed = confirm("Would you like to include special symbols? ");
       // if none are selected an alert would be printed
     if (lowercaseConfirmed === false && uppercaseConfirmed === false && numericConfirmed === false && specialConfirmed === false ) {
       alert("At least one option has to be selected!");
@@ -76,6 +77,7 @@ function writePassword() {
   var finalPassword = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = finalPassword;
+  
 }
     
 // event listener that activates function  on button click 
