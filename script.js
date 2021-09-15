@@ -1,4 +1,4 @@
-// Assignment Code
+
 var generateBtn = document.querySelector("#generate");
 var newPassword = "";
 var letters = "";
@@ -6,7 +6,9 @@ var bigLetters = "";
 var numbers = "";
 var specialSymbols = "";
 
-// Write password to the #password input
+var finalPassword = [];
+
+
 function writePassword() {
       var length = parseInt(prompt("Please, type in the lenght of your password (a number 8-128)","0"), 10);
       if (length > 128 ){
@@ -27,17 +29,18 @@ function generatePassword() {
       var numeric = confirm("Would you like to include numeric characters? ");
       var special = confirm("Would you like to include srecial symbols? ");
     if ( lowercase === true) {
-      var letters = "abcdefghijklmnopqrstuvwxyz";
+      var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     }
     if ( uppercase === true) {
-      var bigLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      var bigLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     }
     if ( numeric === true) {
-      var numbers = "0123456789";
+      var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     }
     if ( special === true) {
-      var specialSymbols = "!*}{[]/@#()_:;?><,+~`|$%^&-=";
+      var specialSymbols = ["!", "*", "}", "{", "[", "]", "/", "#", "%", "@", "(", ")", "_", ";", ":", "<", ">", "&", "?", "+", "`", "|", "-", "="];
     }
+
     if ( lowercase === false) {
       var letters = "";
     }
@@ -54,7 +57,8 @@ function generatePassword() {
       alert("At least one option has to be selected!");
     }
     
-    
+
+
 
 }
       
