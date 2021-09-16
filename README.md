@@ -26,6 +26,38 @@ Main page includes the cliclable button "Generate password" that invokes a promp
 <img alt="Header of the website" src="Images/Image1.jpg" />
 <br>
 
+First you`re being asked for the length of the password:
+
+<br>
+<img alt="Header of the website" src="Images/Image2.jpg" />
+<br>
+
+
+If you in put a number that is not 8-128 you will recieve an alert:
+
+<br>
+<img alt="Header of the website" src="Images/Image3.jpg" />
+<br>
+
+After a valid number for the character length you select types of characters for the password:
+
+<br>
+<img alt="Header of the website" src="Images/Image4.jpg" />
+<br>
+
+You can`t skip all the character selection prompts, if so you would recieve an alert:
+
+
+<br>
+<img alt="Header of the website" src="Images/Image5.jpg" />
+<br>
+
+If at least one of the options is selected the password will be generated:
+
+<br>
+<img alt="Header of the website" src="Images/Image6.jpg" />
+<br>
+
 
 ## Credits
 Following resources  have been used while working on the project:
